@@ -1,0 +1,6 @@
+hg clone http://hg.openjdk.java.net/jdk7u/jdk7u/ openjdk
+sh ./get_source.sh 
+sh make/scripts/hgforest.sh pull -u
+cd openjdk
+make sanity CC=gcc CPP=g++
+make all CC=gcc CPP=g++ ALLOW_DOWNLOADS=true

@@ -1,0 +1,5 @@
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386/
+javac HelloWorld.java 
+javah -jni HelloWorld
+gcc -o libHelloWorld.so -shared -I$JAVA_HOME/include -I$JAVA_HOME/linux HelloWorld.c
+java -Djava.library.path=. HelloWorld Otávio 4
